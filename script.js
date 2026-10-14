@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.reveal').forEach(element => revealObserver.observe(element));
   }
 
-  // Services Accordion Functionality
+  // Services Accordion Functionality (All closed by default)
   const serviceHeads = document.querySelectorAll('.service-head');
 
   const setServiceState = (article, isOpen) => {
@@ -180,17 +180,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Open first service by default
-  if (serviceHeads.length > 0) {
-    const firstService = serviceHeads[0].closest('.service');
-    if (firstService) {
-      setServiceState(firstService, true);
-    }
-  }
-
   // Pre-fill Service Inquiry from buttons
   document.querySelectorAll('.enquire').forEach(btn => {
-    btn.addEventListener('click', (e) => {
+    btn.addEventListener('click', () => {
       const serviceName = btn.getAttribute('data-service');
       const msgBox = document.getElementById('message');
       if (msgBox) {
