@@ -78,7 +78,7 @@ body {
 .dropdown-menu a { display: block; padding: 0.6rem 1rem; color: var(--text-main); text-decoration: none; font-size: 0.95rem; }
 .dropdown-menu a:hover { background: var(--bg-light); color: var(--accent); }
 
-.nav-cta { background: var(--accent); color: #fff; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition); }
+.nav-cta { background: var(--accent); color: #F6F4F0; padding: 0.6rem 1.2rem; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: var(--transition); }
 .nav-cta:hover { background: var(--accent-hover); }
 
 .menu-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 6px; padding: 8px; }
