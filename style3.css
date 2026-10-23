@@ -357,3 +357,54 @@ body {
   .motion-ready .reveal, .motion-ready .reveal.is-visible { opacity: 1; transform: none; transition: none; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
+
+
+
+
+/* Navbar hover effect: deep pink underline + text */
+#nav a,
+#nav .dropdown-toggle {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+/* Underline */
+#nav a::after,
+#nav .dropdown-toggle::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #C2185B; /* Deep pink */
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+
+/* Hover and keyboard focus */
+#nav a:hover,
+#nav a:focus-visible,
+#nav .dropdown-toggle:hover,
+#nav .dropdown-toggle:focus-visible {
+  color: #C2185B;
+}
+
+#nav a:hover::after,
+#nav a:focus-visible::after,
+#nav .dropdown-toggle:hover::after,
+#nav .dropdown-toggle:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  #nav a,
+  #nav .dropdown-toggle,
+  #nav a::after,
+  #nav .dropdown-toggle::after {
+    transition: none;
+  }
+}
